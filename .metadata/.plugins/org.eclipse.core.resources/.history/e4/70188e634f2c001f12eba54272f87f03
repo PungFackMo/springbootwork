@@ -1,0 +1,8 @@
+package com.todo;
+
+public class TodoEntity {
+		private Integer id;
+		private String content;
+		private Boolean completed;
+		
+}

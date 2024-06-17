@@ -1,0 +1,7 @@
+spring.application.name=TodoApp
+
+# database h2 설정
+# h2 콘솔의 접속을 허용할지 여부
+spring.h2.console.enabled=true
+# 콘솔 접속을 위한 URL 경로
+spring.h2.console.path=/h2-console

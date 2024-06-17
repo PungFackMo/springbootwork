@@ -1,0 +1,14 @@
+package com.todo;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller // 컨트롤러는 주소를 만들어야함
+public class TodoCont {
+	
+	@GetMapping("/")
+	public String getTodos(Model model) {
+		return "todos";
+	}
+}

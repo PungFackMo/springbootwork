@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;TodoApp/src/main/resources/templates/todo.html&apos; to &apos;todos.html&apos;" description="Rename resource &apos;todo.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/templates/todo.html" name="todos.html" stamp="1718594089564" updateReferences="true"/>
+</session>

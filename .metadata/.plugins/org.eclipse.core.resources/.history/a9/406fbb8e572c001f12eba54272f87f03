@@ -1,0 +1,21 @@
+package com.todo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller // 컨트롤러는 주소를 만들어야함
+public class TodoCont {
+	
+	@Autowired
+	TodoService tService;
+	
+	@GetMapping("/")
+	public String getTodos(Model model) {
+		for(TodoEntity tEntity : tService.getTodos()) {
+			System.out.println(tEntity);
+		}
+		return "todos";
+	}
+}
