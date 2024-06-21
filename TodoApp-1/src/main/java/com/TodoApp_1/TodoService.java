@@ -21,5 +21,9 @@ public class TodoService {
 		tRepo.save(tDto);
 	}
 	
+	//id 값을 이용하여 한개의 todo 가져오기
+	public TodoDto getTodo(Integer id) {
+		return tRepo.findById(id).get();
+	}
 
 }
