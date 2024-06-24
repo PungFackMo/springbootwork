@@ -5,9 +5,12 @@ import java.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.validation.Valid;
 
@@ -37,14 +40,13 @@ public class TodoCont {
 	
 	//할 일 추가하기
 	@PostMapping("/put")
-	public String putTodo(@Valid TodoDto tDto) {
+	public String putTodo(TodoDto tDto, BindingResult bindingResult, Model model) {
 //		System.out.println(tDto);
-//		if (bindingResult.hasErrors()) {
-//			return "/todos"; // 유효성 검사 오류 시 오류 페이지로 리디렉션
-//		}
-//		if (bindingResult.hasErrors()) {
-//            return "redirect"; // 유효성 검사 오류 시 오류 페이지로 리디렉션
-//        }
+		if (bindingResult.hasErrors()) {
+			 MessageDto message = new MessageDto("유효성 검사 오류가 발생했습니다.", "/put", RequestMethod.GET, null);
+			 return showMessageAndRedirect(message, model); // 유효성 검사 오류 시 오류 페이지로 리디렉션
+        }
+		System.out.println("2번째 에러");
 		if(tDto.getCompleted()==null) {
 			tDto.setCompleted(false);
 		}
@@ -52,6 +54,8 @@ public class TodoCont {
 			tDto.setStartDate(LocalDate.now());
 		}
 		tService.putTodo(tDto);
+		System.out.println("3번째 에러");
+		
 		return "redirect:/todos";
 	}
 	
@@ -107,5 +111,12 @@ public class TodoCont {
 //		System.out.println(id);
 		tService.deleteTodo(id);
 		return "redirect:/todos";
+	}
+	
+	
+	// 사용자에게 메세지를 전달하고, 페이지를 리다이렉트 한다.
+	private String showMessageAndRedirect(final MessageDto params, Model model) {
+		model.addAttribute("params", params);
+		return "common/messageRedirect";
 	}
 }

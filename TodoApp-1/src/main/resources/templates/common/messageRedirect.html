@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Message Redirect</title>
+</head>
+<body>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        var message = /*[[${params.message}]]*/ null;
+        alert(message);
+        var redirectUrl = /*[[${params.redirectUrl}]]*/ null;
+        window.location.href = redirectUrl;
+        /*]]>*/
+    </script>
+</body>
+</html>

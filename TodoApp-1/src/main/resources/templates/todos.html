@@ -33,81 +33,83 @@
           <a class="hover-effect hover-effect--cursor-square" href="index4.html">V4</a>
         </nav>
       </header>
+      <div class="m-auto ml-5 mr-5 p-5 mt-5 border border-3">
+	      <section class="content">
+	      	<h2 class="content__title">Todos</h2>
+		      <form 
+		      	th:action="@{/put}" method="post"
+		      	class="row justify-content-center align-items-venter mb-4 pb-2 g-3"
+		      >
+		      	<div class="col-10">
+				    <input id="inputContent" type="text" placeholder="new todo..." name="content" required class="form-control">
+		      	</div>
+		      	<div class="col-2 d-grid gap-2 mx-auto">
+		      		<button type="submit" class="btn btn-primary">Save</button>
+		      	</div>
+		      </form>
+	      </section>
       <section class="content">
-      	<h2 class="content__title">Todos</h2>
-	      <form 
-	      	th:action="@{/put}" method="post"
-	      	class="row justify-content-center align-items-venter mb-4 pb-2 g-3"
-	      >
-	      	<div class="col-10">
-			    <input id="put-todo" type="text" placeholder="new todo..." name="content" required class="form-control">
-	      	</div>
-	      	<div class="col-2 d-grid gap-2 mx-auto">
-	      		<button type="submit" class="btn btn-primary">Save</button>
-	      	</div>
-	      </form>
-      </section>
-      <section class="content">
-        <ul class="list list--box">
-           <li class="list__item_t">
-        	  <span class="list__item-col hover-effect hover-effect--cursor-square">No.</span>
-        	  <span class="list__item-col hover-effect hover-effect--cursor-square">Todo Item</span>
-        	  <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Start Date</span>
-        	  <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">End Date</span>
-        	  <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Check</span>
-        	  <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Edit</span>
-        	  <span class="list__item-col hover-effect hover-effect--cursor-square">Delete</span>
-          </li>
-		  <li class="list__item" th:each="todo : ${todos}">
-		      <span class="list__item-col text-decoration-line-through" th:if="${todo.completed}" th:text="${todo.content}"></span>
-		      <span class="list__item-col hover-effect hover-effect--cursor-square" th:unless="${todo.completed}" th:text="${todo.content}"></span>
-		      <span class="list__item-col list__item-center text-decoration-line-through" th:if="${todo.completed}" th:text="${todo.startDate}"></span>
-		      <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square" th:unless="${todo.completed}" th:text="${todo.startDate}"></span>
-		      <span class="list__item-col list__item-center text-decoration-underline" th:if="${todo.completed}" th:text="${todo.endDate}"></span>
-		      <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square" th:unless="${todo.completed}" th:text="${todo.endDate}"></span>
-		      <div class="list__item-center">
-				<a 
-					th:href="@{/endTodoT(id=${todo.id},startDate=${todo.startDate},endDate=${todo.endDate},content=${todo.content},completed=${todo.completed})}">
-					<button th:if="${todo.completed}" class="btn btn-outline-light btn">checked</button>
-					<button th:unless="${todo.completed}" class="btn btn-outline-light btn">check</button>
-				</a>
-		      </div>
-		      <a th:href="@{/update/{id}(id=${todo.id})}" class="list__item-center">
-				  <button class="btn btn-outline-light btn">Update</button>
-		      </a>
-		      <a th:href="@{/delete/{id}(id=${todo.id})}" class="list__item-center">
-				  <button class="btn btn-outline-light btn">Delete</button>
-		      </a>
-		  </li>
-        </ul>
-        <h2 class="content__title spacer">Event Codes</h2>
-        <ul class="list list--alt">
-          <li class="list__item">
-            <span class="list__item-col hover-effect hover-effect--cursor-square">2178-04-21</span>
-            <span class="list__item-col hover-effect hover-effect--cursor-square">2190-07-16</span>
-            <span class="list__item-col hover-effect hover-effect--cursor-square">X7</span>
-            <span class="list__item-col hover-effect hover-effect--cursor-square">2205-12-08</span>
-          </li>
-          <li class="list__item">
-            <span class="list__item-col hover-effect hover-effect--cursor-square">2234-02-11</span>
-            <span class="list__item-col hover-effect hover-effect--cursor-square">2241-09-25</span>
-            <span class="list__item-col hover-effect hover-effect--cursor-square">A5</span>
-            <span class="list__item-col hover-effect hover-effect--cursor-square">2253-01-30</span>
-          </li>
-          <li class="list__item">
-            <span class="list__item-col hover-effect hover-effect--cursor-square">2301-06-17</span>
-            <span class="list__item-col hover-effect hover-effect--cursor-square">2312-03-05</span>
-            <span class="list__item-col hover-effect hover-effect--cursor-square">B9</span>
-            <span class="list__item-col hover-effect hover-effect--cursor-square">2320-08-14</span>
-          </li>
-          <li class="list__item">
-            <span class="list__item-col hover-effect hover-effect--cursor-square">2404-11-19</span>
-            <span class="list__item-col hover-effect hover-effect--cursor-square">2415-07-22</span>
-            <span class="list__item-col hover-effect hover-effect--cursor-square">L0</span>
-            <span class="list__item-col hover-effect hover-effect--cursor-square">2428-05-29</span>
-          </li>
-        </ul>
-      </section>
+	        <ul class="list list--box">
+	           <li class="list__item_t">
+	        	  <span class="list__item-col hover-effect hover-effect--cursor-square">No.</span>
+	        	  <span class="list__item-col hover-effect hover-effect--cursor-square">Todo Item</span>
+	        	  <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Start Date</span>
+	        	  <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">End Date</span>
+	        	  <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Check</span>
+	        	  <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Edit</span>
+	        	  <span class="list__item-col hover-effect hover-effect--cursor-square">Delete</span>
+	          </li>
+			  <li class="list__item" th:each="todo : ${todos}">
+			      <span class="list__item-col text-decoration-line-through" th:if="${todo.completed}" th:text="${todo.content}"></span>
+			      <span class="list__item-col hover-effect hover-effect--cursor-square" th:unless="${todo.completed}" th:text="${todo.content}"></span>
+			      <span class="list__item-col list__item-center text-decoration-line-through" th:if="${todo.completed}" th:text="${todo.startDate}"></span>
+			      <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square" th:unless="${todo.completed}" th:text="${todo.startDate}"></span>
+			      <span class="list__item-col list__item-center text-decoration-underline" th:if="${todo.completed}" th:text="${todo.endDate}"></span>
+			      <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square" th:unless="${todo.completed}" th:text="${todo.endDate}"></span>
+			      <div class="list__item-center">
+					<a 
+						th:href="@{/endTodoT(id=${todo.id},startDate=${todo.startDate},endDate=${todo.endDate},content=${todo.content},completed=${todo.completed})}">
+						<button th:if="${todo.completed}" class="btn btn-outline-light btn">checked</button>
+						<button th:unless="${todo.completed}" class="btn btn-outline-light btn">check</button>
+					</a>
+			      </div>
+			      <a th:href="@{/update/{id}(id=${todo.id})}" class="list__item-center">
+					  <button class="btn btn-outline-light btn">Update</button>
+			      </a>
+			      <a th:href="@{/delete/{id}(id=${todo.id})}" class="list__item-center">
+					  <button class="btn btn-outline-light btn">Delete</button>
+			      </a>
+			  </li>
+	        </ul>
+      	</section>
+	 </div>
+	        <h2 class="content__title spacer">Event Codes</h2>
+	        <ul class="list list--alt">
+	          <li class="list__item">
+	            <span class="list__item-col hover-effect hover-effect--cursor-square">2178-04-21</span>
+	            <span class="list__item-col hover-effect hover-effect--cursor-square">2190-07-16</span>
+	            <span class="list__item-col hover-effect hover-effect--cursor-square">X7</span>
+	            <span class="list__item-col hover-effect hover-effect--cursor-square">2205-12-08</span>
+	          </li>
+	          <li class="list__item">
+	            <span class="list__item-col hover-effect hover-effect--cursor-square">2234-02-11</span>
+	            <span class="list__item-col hover-effect hover-effect--cursor-square">2241-09-25</span>
+	            <span class="list__item-col hover-effect hover-effect--cursor-square">A5</span>
+	            <span class="list__item-col hover-effect hover-effect--cursor-square">2253-01-30</span>
+	          </li>
+	          <li class="list__item">
+	            <span class="list__item-col hover-effect hover-effect--cursor-square">2301-06-17</span>
+	            <span class="list__item-col hover-effect hover-effect--cursor-square">2312-03-05</span>
+	            <span class="list__item-col hover-effect hover-effect--cursor-square">B9</span>
+	            <span class="list__item-col hover-effect hover-effect--cursor-square">2320-08-14</span>
+	          </li>
+	          <li class="list__item">
+	            <span class="list__item-col hover-effect hover-effect--cursor-square">2404-11-19</span>
+	            <span class="list__item-col hover-effect hover-effect--cursor-square">2415-07-22</span>
+	            <span class="list__item-col hover-effect hover-effect--cursor-square">L0</span>
+	            <span class="list__item-col hover-effect hover-effect--cursor-square">2428-05-29</span>
+	          </li>
+	        </ul>
     </main>
     <script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>
     <!-- JavaScript dependencies -->

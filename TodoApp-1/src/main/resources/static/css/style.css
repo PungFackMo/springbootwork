@@ -424,13 +424,13 @@ a:focus-visible {
 
 @media screen and (min-width: 73em) {
 	.list__item {
-		grid-template-columns: 40px 30% 1.1fr 1.1fr 1fr 1fr 1fr;
+		grid-template-columns: 40px 300px 1.1fr 1.1fr 1fr 1fr 1fr;
 	}
 	.list__item_t {
-		grid-template-columns: 40px 30% 1.1fr 1.1fr 1fr 1fr 1fr;
+		grid-template-columns: 40px 300px 1.1fr 1.1fr 1fr 1fr 1fr;
 	}
 	.list__item_mp {
-		grid-template-columns: 40px 30% 1.1fr 1.1fr 1fr;
+		grid-template-columns: 40px 300px 1.1fr 1.1fr 1fr;
 	}
 	.demo-4 .list__item .list__item_t .list__item_mp {
 		grid-template-columns: 100px 1fr 1fr auto ;
