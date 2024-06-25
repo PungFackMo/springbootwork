@@ -7,10 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.validation.Valid;
 
@@ -40,13 +40,14 @@ public class TodoCont {
 	
 	//할 일 추가하기
 	@PostMapping("/put")
-	public String putTodo(TodoDto tDto, BindingResult bindingResult, Model model) {
+	public String putTodo(@Valid @ModelAttribute("todoDto") TodoDto tDto, BindingResult bindingResult, Model model) {
 //		System.out.println(tDto);
 		if (bindingResult.hasErrors()) {
-			 MessageDto message = new MessageDto("유효성 검사 오류가 발생했습니다.", "/put", RequestMethod.GET, null);
+			 MessageDto message = new MessageDto("Please enter new todo!", "/todos", RequestMethod.GET, null);
+			 System.out.println(message);
 			 return showMessageAndRedirect(message, model); // 유효성 검사 오류 시 오류 페이지로 리디렉션
         }
-		System.out.println("2번째 에러");
+//		System.out.println("2번째 에러");
 		if(tDto.getCompleted()==null) {
 			tDto.setCompleted(false);
 		}
@@ -54,7 +55,6 @@ public class TodoCont {
 			tDto.setStartDate(LocalDate.now());
 		}
 		tService.putTodo(tDto);
-		System.out.println("3번째 에러");
 		
 		return "redirect:/todos";
 	}

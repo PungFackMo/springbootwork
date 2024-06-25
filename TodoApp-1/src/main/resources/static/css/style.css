@@ -288,6 +288,8 @@ a:focus-visible {
 	flex: none;
 	padding: 3px 3px 0;
 	line-height: 0.8;
+	word-break:break-all;
+	max-width: 120px;
 }
 
 .list__item-button {
@@ -392,18 +394,21 @@ a:focus-visible {
 
 .list__item-center {
 	text-align: center;
-	margin: 0 auto
+	margin: 0 auto;
 }
 
 @media screen and (min-width: 40em) {
 	.list__item{
-		grid-template-columns: auto 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr auto;
+		grid-template-columns: auto 100px 60px 60px 0.5fr 0.5fr auto;
 	}
 	.list__item_t {
-		grid-template-columns: auto 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr auto;
+		grid-template-columns: auto 100px 60px 60px 0.5fr 0.5fr auto;
+		max-width: 1000px;
+		
 	}
 	.list__item_mp {
-		grid-template-columns: auto 0.5fr 0.5fr 0.5fr 0.5fr;
+		grid-template-columns: auto 100px 60px 60px 0.5fr;
+		max-width: 1000px;
 	}
 	
 }
@@ -424,13 +429,13 @@ a:focus-visible {
 
 @media screen and (min-width: 73em) {
 	.list__item {
-		grid-template-columns: 40px 300px 1.1fr 1.1fr 1fr 1fr 1fr;
+		grid-template-columns: 40px 300px 120px 120px 100px 100px 100px;
 	}
 	.list__item_t {
-		grid-template-columns: 40px 300px 1.1fr 1.1fr 1fr 1fr 1fr;
+		grid-template-columns: 40px 300px 120px 120px 100px 100px 100px;
 	}
 	.list__item_mp {
-		grid-template-columns: 40px 300px 1.1fr 1.1fr 1fr;
+		grid-template-columns: 40px 300px 120px 120px 100px;
 	}
 	.demo-4 .list__item .list__item_t .list__item_mp {
 		grid-template-columns: 100px 1fr 1fr auto ;

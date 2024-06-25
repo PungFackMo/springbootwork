@@ -16,7 +16,7 @@ import lombok.ToString;
 public class MessageDto {
 
 	private String message;				// 사용자에게 전달할 메세지
-	private String redirectUri;			// 리다이렉트 URI
+	private String url;			// 리다이렉트 URL
 	private RequestMethod method;		// HTTP 요청 메소드
 	private Map<String, Object> data;	// 화면(View)으로 전달할 데이터(파라미터)
 }

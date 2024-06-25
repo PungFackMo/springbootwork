@@ -60,8 +60,10 @@
 	        	  <span class="list__item-col hover-effect hover-effect--cursor-square">Delete</span>
 	          </li>
 			  <li class="list__item" th:each="todo : ${todos}">
-			      <span class="list__item-col text-decoration-line-through" th:if="${todo.completed}" th:text="${todo.content}"></span>
-			      <span class="list__item-col hover-effect hover-effect--cursor-square" th:unless="${todo.completed}" th:text="${todo.content}"></span>
+			  	  <div class="word-break: break-word">
+				      <span class="list__item-col text-decoration-line-through" th:if="${todo.completed}" th:text="${todo.content}"></span>
+				      <span class="list__item-col" th:unless="${todo.completed}" th:text="${todo.content}"></span>
+			  	  </div>
 			      <span class="list__item-col list__item-center text-decoration-line-through" th:if="${todo.completed}" th:text="${todo.startDate}"></span>
 			      <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square" th:unless="${todo.completed}" th:text="${todo.startDate}"></span>
 			      <span class="list__item-col list__item-center text-decoration-underline" th:if="${todo.completed}" th:text="${todo.endDate}"></span>
