@@ -410,7 +410,10 @@ a:focus-visible {
 		grid-template-columns: auto 100px 60px 60px 0.5fr;
 		max-width: 1000px;
 	}
-	
+	 .list__item_board {
+		grid-template-columns: auto 100px 60px 60px 0.5fr;
+		max-width: 1000px;
+	}
 }
 
 @media screen and (min-width: 53em) {
@@ -425,6 +428,7 @@ a:focus-visible {
 	.frame #cdawrap {
 	  text-align: right;
 	}
+	
 }
 
 @media screen and (min-width: 73em) {
@@ -434,11 +438,11 @@ a:focus-visible {
 	.list__item_t {
 		grid-template-columns: 40px 300px 120px 120px 100px 100px 100px;
 	}
-	.list__item_mp {
+	.list__item_mp{
 		grid-template-columns: 40px 300px 120px 120px 100px;
 	}
-	.demo-4 .list__item .list__item_t .list__item_mp {
-		grid-template-columns: 100px 1fr 1fr auto ;
+	.list__item_board{
+		grid-template-columns: 40px 300px 80px 120px 120px;
 	}
 	.list__item-col:last-child {
 		justify-self: center;
