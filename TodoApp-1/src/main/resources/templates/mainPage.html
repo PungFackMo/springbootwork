@@ -1,114 +1,115 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js loading">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SpringBootProject</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="author" content="Codrops" />
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
-    <script>document.documentElement.className="js";</script>
-    <script src="//tympanus.net/codrops/adpacks/analytics.js"></script>
-  </head>
-  <body class="demo-1">
-    <main>
-      <header class="frame">
-        <h1 class="frame__title">
-        <a class="hover-effect hover-effect--cursor-square" href="https://blog.naver.com/PostList.naver?blogId=kmo_blog&from=postList&categoryNo=42">#blog</a> 
-        <a href="/">spring boot project</a>
-        <a class="hover-effect hover-effect--cursor-square" href="https://github.com/PungFackMo/SpringBootProject.git">#GitHub</a></h1> 
-        <a class="frame__back hover-effect hover-effect--cursor-square" href="/todos">Todo-App</a>
-        <a class="frame__archive hover-effect hover-effect--cursor-square" href="https://tympanus.net/codrops/demos/">All demos</a>
-        <a class="frame__github hover-effect hover-effect--cursor-square" href="https://github.com/codrops/LineTextHoverAnimations/">GitHub</a>
-        <nav class="frame__demos">
-          <span>Variations:</span>
-          <span>V1</span>
-          <a class="hover-effect hover-effect--cursor-square" href="index2.html">V2</a>
-          <a class="hover-effect hover-effect--cursor-square" href="index3.html">V3</a>
-          <a class="hover-effect hover-effect--cursor-square" href="index4.html">V4</a>
-        </nav>
-      </header>
-      <section class="content">
-      	<div class="m-auto p-5 mt-5 border border-3 bg-gradient" >
-	      	<div class="content__title fs-1 mb-5">
-			    <a href="/todos">
-			      <h2 class="text-decoration-underline">Todos</h2>
-			    </a>
-	      	</div>
-	        <div class="ms-4">
-		        <ul class="list list--box">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpringBootProject</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="Codrops" />
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+<script>document.documentElement.className="js";</script>
+<script src="//tympanus.net/codrops/adpacks/analytics.js"></script>
+</head>
+<body class="demo-1">
+	<main>
+		<header class="frame">
+			<h1 class="frame__title">
+			<a class="hover-effect hover-effect--cursor-square" href="https://blog.naver.com/PostList.naver?blogId=kmo_blog&from=postList&categoryNo=42">#blog</a> 
+			<a href="/" class="main-style">spring boot project</a>
+			<a class="hover-effect hover-effect--cursor-square" href="https://github.com/PungFackMo/SpringBootProject.git">#GitHub</a></h1> 
+			<a class="frame__back hover-effect hover-effect--cursor-square" href="/todos">Todo-App</a>
+			<a class="frame__archive hover-effect hover-effect--cursor-square" href="/board">Board</a>
+			<a class="frame__github hover-effect hover-effect--cursor-square" href="https://github.com/codrops/LineTextHoverAnimations/">GitHub</a>
+			<nav class="frame__demos">
+				<span>Variations:</span>
+				<span>V1</span>
+				<a class="hover-effect hover-effect--cursor-square" href="index2.html">V2</a>
+				<a class="hover-effect hover-effect--cursor-square" href="index3.html">V3</a>
+				<a class="hover-effect hover-effect--cursor-square" href="index4.html">V4</a>
+			</nav>
+		</header>
+		<section class="content">
+			<div class="m-auto p-5 mt-5 border border-3 bg-gradient" >
+				<div class="content__title fs-1 mb-5">
 					<a href="/todos">
-			           <li class="list__item_t list__item_mp">
-			        	  <span class="list__item-col hover-effect hover-effect--cursor-square">No.</span>
-			        	  <span class="list__item-col hover-effect hover-effect--cursor-square">Todo Item</span>
-			        	  <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Start Date</span>
-			        	  <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">End Date</span>
-			        	  <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Check</span>
-			          </li>
+					<h2 class="text-decoration-underline">Todos</h2>
 					</a>
-				  <li class="list__item list__item_mp" th:each="todo : ${todos}">
-				      <span class="list__item-col text-decoration-line-through" th:if="${todo.completed}" th:text="${todo.content}"></span>
-				      <span class="list__item-col hover-effect hover-effect--cursor-square" th:unless="${todo.completed}" th:text="${todo.content}"></span>
-				      <span class="list__item-col list__item-center text-decoration-line-through" th:if="${todo.completed}" th:text="${todo.startDate}"></span>
-				      <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square" th:unless="${todo.completed}" th:text="${todo.startDate}"></span>
-				      <span class="list__item-col list__item-center text-decoration-underline" th:if="${todo.completed}" th:text="${todo.endDate}"></span>
-				      <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square" th:unless="${todo.completed}" th:text="${todo.endDate}"></span>
-				      <div class="list__item-center">
-						<a 
-							th:href="@{/endTodoMP(id=${todo.id},startDate=${todo.startDate},endDate=${todo.endDate},content=${todo.content},completed=${todo.completed})}">
-							<button th:if="${todo.completed}" class="btn btn-outline-light btn">checked</button>
-							<button th:unless="${todo.completed}" class="btn btn-outline-light btn">check</button>
+				</div>
+				<div class="ms-4">
+					<ul class="list list--box">
+						<a href="/todos">
+							<li class="list__item_t list__item_mp">
+								<span class="list__item-col hover-effect hover-effect--cursor-square">No.</span>
+								<span class="list__item-col hover-effect hover-effect--cursor-square">Todo Item</span>
+								<span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Start Date</span>
+								<span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">End Date</span>
+								<span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Check</span>
+							</li>
 						</a>
-				      </div>
-				  </li>
-		        </ul>
-	        </div>
-	        <h2 class="content__title spacer">Event Codes</h2>
-	        <ul class="list list--alt">
-	          <li class="list__item">
-	            <span class="list__item-col hover-effect hover-effect--cursor-square">2178-04-21</span>
-	            <span class="list__item-col hover-effect hover-effect--cursor-square">2190-07-16</span>
-	            <span class="list__item-col hover-effect hover-effect--cursor-square">X7</span>
-	            <span class="list__item-col hover-effect hover-effect--cursor-square">2205-12-08</span>
-	          </li>
-	          <li class="list__item">
-	            <span class="list__item-col hover-effect hover-effect--cursor-square">2234-02-11</span>
-	            <span class="list__item-col hover-effect hover-effect--cursor-square">2241-09-25</span>
-	            <span class="list__item-col hover-effect hover-effect--cursor-square">A5</span>
-	            <span class="list__item-col hover-effect hover-effect--cursor-square">2253-01-30</span>
-	          </li>
-	          <li class="list__item">
-	            <span class="list__item-col hover-effect hover-effect--cursor-square">2301-06-17</span>
-	            <span class="list__item-col hover-effect hover-effect--cursor-square">2312-03-05</span>
-	            <span class="list__item-col hover-effect hover-effect--cursor-square">B9</span>
-	            <span class="list__item-col hover-effect hover-effect--cursor-square">2320-08-14</span>
-	          </li>
-	          <li class="list__item">
-	            <span class="list__item-col hover-effect hover-effect--cursor-square">2404-11-19</span>
-	            <span class="list__item-col hover-effect hover-effect--cursor-square">2415-07-22</span>
-	            <span class="list__item-col hover-effect hover-effect--cursor-square">L0</span>
-	            <span class="list__item-col hover-effect hover-effect--cursor-square">2428-05-29</span>
-	          </li>
-	        </ul>
-      	</div>
-      </section>
-    </main>
-    <script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>
-    <!-- JavaScript dependencies -->
-    <!-- GSAP library -->
-    <script src="/js/gsap.min.js"></script>
-
-    <!-- SplitType for text manipulation: https://github.com/lukePeavey/SplitType -->
-    <script src="/js/split-type.min.js"></script>
-
-    <!-- Scripts for the effect -->
-    <script type="module" src="/js/effect-1/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+						<li class="list__item list__item_mp" th:each="todo : ${todos}">
+							<span class="list__item-col text-decoration-line-through" th:if="${todo.completed}" th:text="${todo.content}"></span>
+							<span class="list__item-col hover-effect hover-effect--cursor-square" th:unless="${todo.completed}" th:text="${todo.content}"></span>
+							<span class="list__item-col list__item-center text-decoration-line-through" th:if="${todo.completed}" th:text="${todo.startDate}"></span>
+							<span class="list__item-col list__item-center hover-effect hover-effect--cursor-square" th:unless="${todo.completed}" th:text="${todo.startDate}"></span>
+							<span class="list__item-col list__item-center text-decoration-underline" th:if="${todo.completed}" th:text="${todo.endDate}"></span>
+							<span class="list__item-col list__item-center hover-effect hover-effect--cursor-square" th:unless="${todo.completed}" th:text="${todo.endDate}"></span>
+							<div class="list__item-center">
+								<a 
+									th:href="@{/endTodoMP(id=${todo.id},startDate=${todo.startDate},endDate=${todo.endDate},content=${todo.content},completed=${todo.completed})}">
+									<button th:if="${todo.completed}" class="btn btn-outline-light btn">checked</button>
+									<button th:unless="${todo.completed}" class="btn btn-outline-light btn">check</button>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="m-auto p-5 mt-5 border border-3 bg-gradient" >
+				<div class="content__title fs-1 mb-5">
+					<a href="/board">
+					<h2 class="text-decoration-underline">Boards</h2>
+					</a>
+				</div>
+				<div class="ms-4">
+					<ul class="list list--box">
+						<a href="/board">
+							<li class="list__item_t list__item_mp list__item_board">
+								<span class="list__item-col hover-effect hover-effect--cursor-square">No.</span>
+								<span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Title</span>
+								<span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Writer</span>
+								<span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Create</span>
+								<span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Update</span>
+							</li>
+						</a>
+						<li class="list__item list__item_board" th:each="board : ${boards}">
+							<a th:href="@{/board-detail/{id}(id=${board.id})}">
+								<span class="list__item-col list__item_board hover-effect hover-effect--cursor-square" th:text="${board.title}"></span>
+							</a>
+							<span class="list__item-col list__item-center list__item_board hover-effect hover-effect--cursor-square" th:text="${board.userName}"></span>
+							<span class="list__item-col list__item-center list__item_board hover-effect hover-effect--cursor-square" th:text="${#temporals.format(board.createdDateTime, 'yyyy-MM-dd')}"></span>
+							<span class="list__item-col list__item-center list__item_board hover-effect hover-effect--cursor-square" th:text="${#temporals.format(board.updatedDateTime, 'yyyy-MM-dd')}"></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</main>
+	<script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>
+	<!-- JavaScript dependencies -->
+	<!-- GSAP library -->
+	<script src="/js/gsap.min.js"></script>
+	
+	<!-- SplitType for text manipulation: https://github.com/lukePeavey/SplitType -->
+	<script src="/js/split-type.min.js"></script>
+	
+	<!-- Scripts for the effect -->
+	<script type="module" src="/js/effect-1/index.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
 </html>

@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.TodoApp_1.todo.TodoDto;
+import com.TodoApp_1.todo.TodoRepo;
+
 @SpringBootTest
 class TodoRepoTest {
 

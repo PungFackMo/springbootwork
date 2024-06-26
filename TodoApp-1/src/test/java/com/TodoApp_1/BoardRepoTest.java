@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.TodoApp_1.board.BoardDto;
+import com.TodoApp_1.board.BoardRepo;
+
 @SpringBootTest
 class BoardRepoTest {
 	
@@ -30,8 +33,6 @@ class BoardRepoTest {
 		bDto2.setUserPW("121212");
 		bDto2.setCreatedDateTime(LocalDateTime.now());
 		bDto2.setUpdatedDateTime(LocalDateTime.now());
-		bDto2.setComment("나는 댓글");
-		bDto2.setCreatedCommentDateTime(LocalDateTime.now());
 		bRepo.save(bDto2);
 	}
 

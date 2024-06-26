@@ -109,6 +109,11 @@ main {
 	min-height: 10vh;
 	justify-content: space-between;
 }
+.main-style {
+	font-weight: 500;
+	color: #afeeee;
+	text-shadow: -0.5px 0px #afeeee, 0px 0.5px #afeeee, 0.5px 0px #afeeee, 0px -0.5px #afeeee;
+}
 
 .demo-5 main {
 	mix-blend-mode: difference;
@@ -404,7 +409,10 @@ a:focus-visible {
 	.list__item_t {
 		grid-template-columns: auto 100px 60px 60px 0.5fr 0.5fr auto;
 		max-width: 1000px;
-		
+	}
+	.list__item_t_up {
+		grid-template-columns: 70% 15% 15%;
+		max-width: 1600px;
 	}
 	.list__item_mp {
 		grid-template-columns: auto 100px 60px 60px 0.5fr;
@@ -438,6 +446,9 @@ a:focus-visible {
 	.list__item_t {
 		grid-template-columns: 40px 300px 120px 120px 100px 100px 100px;
 	}
+	.list__item_t_up {
+		grid-template-columns: 70% 170px 170px;
+	}
 	.list__item_mp{
 		grid-template-columns: 40px 300px 120px 120px 100px;
 	}
@@ -451,4 +462,8 @@ a:focus-visible {
 		justify-self: center;
 	}
 }
-	
+@font-face {
+	font-family: 'CookieRun Regular';
+	src: url('../font/CookieRun Regular.ttf') format('woff');
+	unicode-range: U+AC00-D7A3;
+}
