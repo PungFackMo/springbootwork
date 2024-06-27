@@ -39,6 +39,12 @@ public class BoardService {
 		return bRepo.findById(id).get();
 	}
 	
+	//id 값을 이용하여 Comment 삭제
+	public void deleteBoard(Integer id) {
+		bRepo.deleteById(id);
+	}
+	
+	//login 비밀번호 체크
     public boolean authenticate(Integer id, String userName, String userPW) {
     	Optional<BoardDto> user = bRepo.findById(id);
         // 여기서 실제 사용자 인증 로직을 구현합니다.

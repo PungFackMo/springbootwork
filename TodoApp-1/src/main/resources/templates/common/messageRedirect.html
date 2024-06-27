@@ -8,7 +8,15 @@
         /*<![CDATA[*/
         var message = /*[[${params.message}]]*/ null;
         alert(message);
+        
         var redirectUrl = /*[[${params.url}]]*/ null;
+        var data = /*[[${params.data}]]*/ null;
+
+        if (data) {
+            var queryParams = new URLSearchParams(data).toString();
+            redirectUrl += '?' + queryParams;
+        }
+
         window.location.href = redirectUrl;
         /*]]>*/
     </script>

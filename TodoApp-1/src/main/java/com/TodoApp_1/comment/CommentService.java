@@ -19,8 +19,14 @@ public class CommentService {
 	public void putComment(CommentDto cDto) {
 		cRepo.save(cDto);
 	}
-
+	
+	//board - id값 검색 
     public List<CommentDto> getCommentsByBoardId(Integer boardId) {
         return cRepo.findByBoardId(boardId);
     }
+    
+	//id 값을 이용하여 todo 삭제
+	public void deleteComment(Integer id) {
+		cRepo.deleteById(id);
+	}
 }
