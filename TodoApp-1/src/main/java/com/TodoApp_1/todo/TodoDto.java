@@ -2,9 +2,7 @@ package com.TodoApp_1.todo;
 
 
 import java.time.LocalDate;
-import java.util.Map;
 
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
