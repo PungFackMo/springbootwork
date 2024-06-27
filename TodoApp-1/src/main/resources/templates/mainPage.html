@@ -34,71 +34,93 @@
 				<a class="hover-effect hover-effect--cursor-square" href="index4.html">V4</a>
 			</nav>
 		</header>
-		<section class="content">
-			<div class="m-auto p-5 mt-5 border border-3 bg-gradient" >
-				<div class="content__title fs-1 mb-5">
-					<a href="/todos">
-					<h2 class="text-decoration-underline">Todos</h2>
-					</a>
-				</div>
-				<div class="ms-4">
-					<ul class="list list--box">
-						<a href="/todos">
-							<li class="list__item_t list__item_mp">
-								<span class="list__item-col hover-effect hover-effect--cursor-square">No.</span>
-								<span class="list__item-col hover-effect hover-effect--cursor-square">Todo Item</span>
-								<span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Start Date</span>
-								<span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">End Date</span>
-								<span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Check</span>
-							</li>
-						</a>
-						<li class="list__item list__item_mp" th:each="todo : ${todos}">
-							<span class="list__item-col text-decoration-line-through" th:if="${todo.completed}" th:text="${todo.content}"></span>
-							<span class="list__item-col hover-effect hover-effect--cursor-square" th:unless="${todo.completed}" th:text="${todo.content}"></span>
-							<span class="list__item-col list__item-center text-decoration-line-through" th:if="${todo.completed}" th:text="${todo.startDate}"></span>
-							<span class="list__item-col list__item-center hover-effect hover-effect--cursor-square" th:unless="${todo.completed}" th:text="${todo.startDate}"></span>
-							<span class="list__item-col list__item-center text-decoration-underline" th:if="${todo.completed}" th:text="${todo.endDate}"></span>
-							<span class="list__item-col list__item-center hover-effect hover-effect--cursor-square" th:unless="${todo.completed}" th:text="${todo.endDate}"></span>
-							<div class="list__item-center">
-								<a 
-									th:href="@{/endTodoMP(id=${todo.id},startDate=${todo.startDate},endDate=${todo.endDate},content=${todo.content},completed=${todo.completed})}">
-									<button th:if="${todo.completed}" class="btn btn-outline-light btn">checked</button>
-									<button th:unless="${todo.completed}" class="btn btn-outline-light btn">check</button>
-								</a>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="m-auto p-5 mt-5 border border-3 bg-gradient" >
-				<div class="content__title fs-1 mb-5">
-					<a href="/board">
-					<h2 class="text-decoration-underline">Boards</h2>
-					</a>
-				</div>
-				<div class="ms-4">
-					<ul class="list list--box">
-						<a href="/board">
-							<li class="list__item_t list__item_mp list__item_board">
-								<span class="list__item-col hover-effect hover-effect--cursor-square">No.</span>
-								<span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Title</span>
-								<span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Writer</span>
-								<span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Create</span>
-								<span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Update</span>
-							</li>
-						</a>
-						<li class="list__item list__item_board" th:each="board : ${boards}">
-							<a th:href="@{/board-detail/{id}(id=${board.id})}">
-								<span class="list__item-col list__item_board hover-effect hover-effect--cursor-square" th:text="${board.title}"></span>
-							</a>
-							<span class="list__item-col list__item-center list__item_board hover-effect hover-effect--cursor-square" th:text="${board.userName}"></span>
-							<span class="list__item-col list__item-center list__item_board hover-effect hover-effect--cursor-square" th:text="${#temporals.format(board.createdDateTime, 'yyyy-MM-dd')}"></span>
-							<span class="list__item-col list__item-center list__item_board hover-effect hover-effect--cursor-square" th:text="${#temporals.format(board.updatedDateTime, 'yyyy-MM-dd')}"></span>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</section>
+		<hr class="m-0 ms-4 me-5">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="Diary-box bg-gradient">
+                	<div class="Diary-style">
+	                	<a class="hover-effect hover-effect--cursor-square">Diary</a><br>
+	                	<a class="hover-effect hover-effect--cursor-square" style="font-size: 1rem;">Spring Boot Project</a>
+                	</div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <!-- 오른쪽에 Todos와 Boards 배치 -->
+                <section class="content">
+                    <div class="m-auto p-5 mt-5 border border-3 bg-gradient">
+                        <div class="content__title fs-1 mb-5">
+                            <a href="/todos">
+                                <h2 class="text-decoration-underline">Todos</h2>
+                            </a>
+                        </div>
+                        <div class="ms-4">
+                            <ul class="list list--box">
+                                <!-- Todos 목록 -->
+                                <a href="/todos">
+                                    <li class="list__item_t list__item_mp">
+                                        <span class="list__item-col hover-effect hover-effect--cursor-square">No.</span>
+                                        <span class="list__item-col hover-effect hover-effect--cursor-square">Todo Item</span>
+                                        <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Start Date</span>
+                                        <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">End Date</span>
+                                        <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Check</span>
+                                    </li>
+                                </a>
+                                <li class="list__item list__item_mp" th:each="todo : ${todos}">
+	                                <a href="/todos" class="list__item-col text-decoration-line-through" th:if="${todo.completed}" th:text="${todo.content}"></a>
+                                    <a href="/todos" class="list__item-col" th:unless="${todo.completed}" th:text="${todo.content}"></a>
+                                    <a href="/todos" class="list__item-col list__item-center text-decoration-line-through" th:if="${todo.completed}" th:text="${todo.startDate}"></a>
+                                    <a href="/todos" class="list__item-col list__item-center hover-effect hover-effect--cursor-square" th:unless="${todo.completed}" th:text="${todo.startDate}"></a>
+                                    <a href="/todos" class="list__item-col list__item-center text-decoration-underline" th:if="${todo.completed}" th:text="${todo.endDate}"></a>
+                                    <a href="/todos" class="list__item-col list__item-center hover-effect hover-effect--cursor-square" th:unless="${todo.completed}" th:text="${todo.endDate}"></a>
+                                    <div class="list__item-center">
+                                        <a th:href="@{/endTodoMP(id=${todo.id},startDate=${todo.startDate},endDate=${todo.endDate},content=${todo.content},completed=${todo.completed})}">
+                                            <button th:if="${todo.completed}" class="btn btn-outline-light btn">checked</button>
+                                            <button th:unless="${todo.completed}" class="btn btn-outline-light btn">check</button>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="m-auto p-5 mt-5 border border-3 bg-gradient">
+                        <div class="content__title fs-1 mb-5">
+                            <a href="/board">
+                                <h2 class="text-decoration-underline">Boards</h2>
+                            </a>
+                        </div>
+                        <div class="ms-4">
+                            <ul class="list list--box">
+                                <!-- Boards 목록 -->
+                                <a href="/board">
+                                    <li class="list__item_t list__item_mp list__item_board">
+                                        <span class="list__item-col hover-effect hover-effect--cursor-square">No.</span>
+                                        <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Title</span>
+                                        <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Writer</span>
+                                        <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Create</span>
+                                        <span class="list__item-col list__item-center hover-effect hover-effect--cursor-square">Update</span>
+                                    </li>
+                                </a>
+                                <li class="list__item list__item_board" th:each="board : ${boards}">
+                                    <a th:href="@{/board-detail/{id}(id=${board.id})}">
+                                        <span class="list__item-col list__item_board" th:text="${board.title}"></span>
+                                        
+                                    </a>
+                                    <a th:href="@{/board-detail/{id}(id=${board.id})}">
+	                                    <span class="list__item-col list__item-center list__item_board hover-effect hover-effect--cursor-square" th:text="${board.userName}"></span>
+                                    </a>
+                                    <a th:href="@{/board-detail/{id}(id=${board.id})}">
+	                                    <span class="list__item-col list__item-center list__item_board hover-effect hover-effect--cursor-square" th:text="${#temporals.format(board.createdDateTime, 'yyyy-MM-dd')}"></span>
+                                    </a>
+                                    <a th:href="@{/board-detail/{id}(id=${board.id})}">
+	                                    <span class="list__item-col list__item-center list__item_board hover-effect hover-effect--cursor-square" th:text="${#temporals.format(board.updatedDateTime, 'yyyy-MM-dd')}"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
 	</main>
 	<script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>
 	<!-- JavaScript dependencies -->

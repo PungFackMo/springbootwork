@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js loading">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Board-detail</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <script>document.documentElement.className="js";</script>
+    <script src="//tympanus.net/codrops/adpacks/analytics.js"></script>
+  </head>
+  <body class="demo-1">
+    <main>
+      <header class="frame">
+        <h1 class="frame__title"><a class="hover-effect hover-effect--cursor-square" href="https://blog.naver.com/PostList.naver?blogId=kmo_blog&from=postList&categoryNo=42">#blog</a> 
+        <a href="/" class="main-style">spring boot project</a>
+        <a class="hover-effect hover-effect--cursor-square" href="https://github.com/PungFackMo/SpringBootProject.git">#GitHub</a></h1> 
+        <a class="frame__back hover-effect hover-effect--cursor-square" href="/todos">Todo-App</a>
+		<a class="frame__archive hover-effect hover-effect--cursor-square" href="/board">Board</a>
+        <a class="frame__github hover-effect hover-effect--cursor-square" href="https://github.com/codrops/LineTextHoverAnimations/">GitHub</a>
+        <nav class="frame__demos">
+          <span>Variations:</span>
+          <span>V1</span>
+          <a class="hover-effect hover-effect--cursor-square" href="index2.html">V2</a>
+          <a class="hover-effect hover-effect--cursor-square" href="index3.html">V3</a>
+          <a class="hover-effect hover-effect--cursor-square" href="index4.html">V4</a>
+        </nav>
+      </header>
+      <hr class="m-0 ms-4 me-5">
+      <div class="list__item-center">
+	      <div class="m-auto p-5 mt-5 border border-3 bg-gradient" style="width: 70%" >
+	      	<section class="content">
+	      		<form
+	      			th:action="@{/authenticate}" method="post"
+	      			class="row justify-content-center align-items-venter mb-2 pb-2 g-3">
+	      			<h1>Login</h1>
+	      			<div class="text-start mt-5" style="width:50rem">
+		      			<div class="input-group mb-3">
+			      			<span class="input-group-text col-3">Name.</span>
+			      			<input th:value="${board.userName}" type="text" class="form-control" name="userName" placeholder="Username..." readonly>
+			      			<input th:value="${board.id}" type="hidden" name="id">
+		      			</div>
+		      			<div class="input-group mb-3">
+			      			<span class="input-group-text col-3">PW.</span>
+			      			<input type="password"	class="form-control" name="userPW" placeholder="Password...">
+		      			</div>
+		      			<button type="submit" class="btn btn-primary">Login</button>
+	      			</div>
+	      		</form>
+	      	</section>
+	      </div>
+      </div>
+    </main>
+    <script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>
+    <!-- JavaScript dependencies -->
+    <!-- GSAP library -->
+    <script src="/js/gsap.min.js"></script>
+
+    <!-- SplitType for text manipulation: https://github.com/lukePeavey/SplitType -->
+    <script src="/js/split-type.min.js"></script>
+
+    <!-- Scripts for the effect -->
+    <script type="module" src="/js/effect-1/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -17,23 +17,28 @@ class BoardRepoTest {
 
 	@Test
 	void test() {
-		BoardDto bDto=new BoardDto();
-		bDto.setTitle("e 게시글");
-		bDto.setContent("이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.");
-		bDto.setUserName("김e바");
-		bDto.setUserPW("121212");
-		bDto.setCreatedDateTime(LocalDateTime.now());
-		bDto.setUpdatedDateTime(LocalDateTime.now());
-		bRepo.save(bDto);
-		
-		BoardDto bDto2=new BoardDto();
-		bDto2.setTitle("첫 게시글");
-		bDto2.setContent("첫 게시글 내용");
-		bDto2.setUserName("김장바");
-		bDto2.setUserPW("121212");
-		bDto2.setCreatedDateTime(LocalDateTime.now());
-		bDto2.setUpdatedDateTime(LocalDateTime.now());
-		bRepo.save(bDto2);
+		for(int i=0;i<125;i++) {
+			BoardDto bDto=new BoardDto();
+			bDto.setTitle(i
+					+ "게시글");
+			bDto.setContent("이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.이것은 테스트 글입니다.");
+			bDto.setUserName("김e바");
+			bDto.setUserPW("121212");
+			bDto.setCreatedDateTime(LocalDateTime.now());
+			bDto.setUpdatedDateTime(LocalDateTime.now());
+			bRepo.save(bDto);
+			i++;
+			BoardDto bDto2=new BoardDto();
+			bDto2.setTitle(i
+					+ "게시글");
+			bDto2.setContent("첫 게시글 내용");
+			bDto2.setUserName("김장바");
+			bDto2.setUserPW("121212");
+			bDto2.setCreatedDateTime(LocalDateTime.now());
+			bDto2.setUpdatedDateTime(LocalDateTime.now());
+			bRepo.save(bDto2);
+			
+		}
 	}
 
 }

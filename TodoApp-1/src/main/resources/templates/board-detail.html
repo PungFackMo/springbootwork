@@ -22,7 +22,7 @@
         <a href="/" class="main-style">spring boot project</a>
         <a class="hover-effect hover-effect--cursor-square" href="https://github.com/PungFackMo/SpringBootProject.git">#GitHub</a></h1> 
         <a class="frame__back hover-effect hover-effect--cursor-square" href="/todos">Todo-App</a>
-        <a class="frame__archive hover-effect hover-effect--cursor-square" href="https://tympanus.net/codrops/demos/">All demos</a>
+		<a class="frame__archive hover-effect hover-effect--cursor-square" href="/board">Board</a>
         <a class="frame__github hover-effect hover-effect--cursor-square" href="https://github.com/codrops/LineTextHoverAnimations/">GitHub</a>
         <nav class="frame__demos">
           <span>Variations:</span>
@@ -32,8 +32,9 @@
           <a class="hover-effect hover-effect--cursor-square" href="index4.html">V4</a>
         </nav>
       </header>
+      <hr class="m-0 ms-4 me-5">
       <div class="list__item-center">
-	      <div class="m-auto p-5 mt-5 border border-3 bg-gradient">
+	      <div class="m-auto p-5 mt-5 border border-3 bg-gradient board-box-size">
 		      <section class="content">
 		      	<div>
 		      		<div class="text-start">
@@ -42,12 +43,19 @@
 				      		<span>작성자 : </span>
 				      		<span th:text="${board.userName}"></span>
 			      		</div>
-			      		<div style="font-size: 12px;">
-				      		<div>
-					      		<span th:text="${#temporals.format(board.createdDateTime, 'yyyy-MM-dd HH:mm')}"></span>
+			      		<div>
+				      		<div style="font-size: 12px; display:inline-block;">
+					      		<div>
+						      		<span th:text="${#temporals.format(board.createdDateTime, 'yyyy-MM-dd HH:mm')}"></span>
+					      		</div>
+					      		<div>
+						      		<span th:text="${#temporals.format(board.updatedDateTime, 'yyyy-MM-dd HH:mm')}"></span>
+					      		</div>
 				      		</div>
-				      		<div>
-					      		<span th:text="${#temporals.format(board.updatedDateTime, 'yyyy-MM-dd HH:mm')}"></span>
+				      		<div style="display:inline-block; float: right;">
+				      			<a th:href="@{/login/{id}(id=${board.id})}" class="list__item-center">
+					      			<button class="btn btn-outline-light">수정하기</button>
+				      			</a>
 				      		</div>
 			      		</div>
 				      	<hr>

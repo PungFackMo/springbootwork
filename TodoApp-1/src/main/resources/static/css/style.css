@@ -1,7 +1,5 @@
 @charset "UTF-8";
-		*,
-*::after,
-*::before {
+*, *::after, *::before {
 	box-sizing: border-box;
 }
 
@@ -15,10 +13,10 @@
 	--color-list-item: #000;
 	--color-title: #000;
 	--color-number: #000;
-  --color-bg-effect: white;
-  --blendmode-effect: difference;
-  --bg-blur: 0px;
-  --font-size-list-item: 18px;
+    --color-bg-effect: white;
+    --blendmode-effect: difference;
+    --bg-blur: 0px;
+    --font-size-list-item: 18px;
 }
 
 body {
@@ -41,20 +39,20 @@ body::after {
 	left: 0;
 	height: 100%;
 	width: 100%;
-	background-image: repeating-linear-gradient(transparent, transparent 2px, #0000003d 3px);
-	background-size: auto 100%;
+	background-size: auto 100%; 
 	pointer-events: none;
+	z-index: -1;
 }
 
 .demo-1 {
-	background-image:url(/img/23313751.jpg);
+	background-image:url(/img/11111.png); 
 	background-size: cover;
 	background-position: 50% 50%;
 	--color-text: #fff;
 	--color-bg: #000;
 	--color-link: #ffffff;
 	--color-link-hover: #fff;
-	--color-list-item: #ffffffd9;
+	--color-list-item: #ffffffd9; 
 	--color-title: #ffffff;
 	--color-number: #ffffff;
 	--color-bg-effect: rgb(229 222 204 / 10%);
@@ -64,12 +62,12 @@ body::after {
 
 .demo-2 {
 	--color-text: #fff;
-  --color-bg: #252a33;
-  --color-link: #717781;
-  --color-link-hover: #fff;
-  --color-list-item: #c7c0b3;
-  --color-title: #5b6b85;
-  --color-number: #fff;
+    --color-bg: #252a33;
+    --color-link: #717781;
+    --color-link-hover: #fff;
+    --color-list-item: #c7c0b3;
+    --color-title: #5b6b85;
+    --color-number: #fff;
 }
 
 .demo-3 {
@@ -83,7 +81,6 @@ body::after {
 }
 
 .demo-4 {
-	background-image: url(/img/noise.png), url(/img/bg.jpg);
 	background-size: 100px, cover;
 	background-position: 50% 50%;
 	--color-text: #fff;
@@ -100,7 +97,7 @@ body::after {
 }
 
 .demo-4::after {
-  display: none;
+    display: none;
 }
 
 main {
@@ -180,40 +177,40 @@ a:focus-visible {
 }
 
 .frame a {
-  pointer-events: auto;
+    pointer-events: auto;
 }
 
 .frame__title {
-  grid-area: title;
-  font-size: inherit;
-  font-weight: inherit;
-  margin: 0;
+    grid-area: title;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
 }
 
 .frame__back {
-  grid-area: back;
-  justify-self: start;
+    grid-area: back;
+    justify-self: start;
 }
 
 .frame__archive {
-  grid-area: archive;
-  justify-self: start;
+    grid-area: archive;
+    justify-self: start;
 }
 
 .frame__sub {
-  grid-area: sub;
+    grid-area: sub;
 }
 
 .frame__github {
-  grid-area: github;
+    grid-area: github;
 }
 
 .frame__tags {
-  grid-area: tags;
+    grid-area: tags;
 }
 
 .frame__hire {
-  grid-area: hire;
+    grid-area: hire;
 }
 
 .frame__demos {
@@ -274,10 +271,10 @@ a:focus-visible {
 
 .list__item::before {
 	color: var(--color-number);
-  content: counter(item, decimal-leading-zero);
-  counter-increment: item;
-  font-weight: 500;
-  padding: 3px 3px 0;
+    content: counter(item, decimal-leading-zero);
+    counter-increment: item;
+    font-weight: 500;
+    padding: 3px 3px 0;
 	line-height: 0.8;
 }
 
@@ -286,15 +283,14 @@ a:focus-visible {
 }
 
 .list--alt .list__item::before {
-  content: "EVT#" counter(item, decimal-leading-zero) "0";
+    content: "EVT#" counter(item, decimal-leading-zero) "0";
 }
 
 .list__item-col {
 	flex: none;
 	padding: 3px 3px 0;
 	line-height: 0.8;
-	word-break:break-all;
-	max-width: 120px;
+	word-break: break-all;
 }
 
 .list__item-button {
@@ -328,25 +324,25 @@ a:focus-visible {
 }
 
 .list--alt .list__item_t::before {
-  content: "EVT#" counter(item, decimal-leading-zero) "0";
+    content: "EVT#" counter(item, decimal-leading-zero) "0";
 }
 
 .hover-effect .word {
-  white-space: nowrap;
+    white-space: nowrap;
 }
 
 .hover-effect .char {
-  position: relative
+    position: relative
 }
 
 .hover-effect {
-  font-kerning: none;
-  position: relative;
-  white-space: nowrap;
+    font-kerning: none;
+    position: relative;
+    white-space: nowrap;
 }
 
 .hover-effect--cursor-square .char {
-  --opa: 0;
+    --opa: 0;
 }
 
 .hover-effect--cursor-square .char::after {
@@ -359,13 +355,13 @@ a:focus-visible {
 }
 
 .hover-effect--cursor-square .char::after {
-  background: currentColor;
-  height: 100%;
+    background: currentColor;
+    height: 100%;
 }
 
 .hover-effect--bg,
 .hover-effect--bg-south {
-  --anim: 0;
+    --anim: 0;
 }
 
 .hover-effect--bg::after,
@@ -380,7 +376,7 @@ a:focus-visible {
 	mix-blend-mode: var(--blendmode-effect);
 	-webkit-backdrop-filter: blur(var(--bg-blur));
 	backdrop-filter: blur(var(--bg-blur));
-  transform-origin: 0% 50%;
+    transform-origin: 0% 50%;
 	transform: scaleX(var(--anim));
 }
 
@@ -401,9 +397,26 @@ a:focus-visible {
 	text-align: center;
 	margin: 0 auto;
 }
+.Diary-box {
+	position: relative;
+	border: 3px solid white;
+	width: 100%;
+	max-width: 680px;
+	height: auto;
+    min-height: 980px;
+	font-size: 7rem;
+	text-align: center;
+	margin: 3rem auto;
+}
+.Diary-style {
+	font-size: 7rem;
+	text-align: center;
+	margin: 60% 3rem;
+	line-height: 0.5;
+}
 
 @media screen and (min-width: 40em) {
-	.list__item{
+	.list__item {
 		grid-template-columns: auto 100px 60px 60px 0.5fr 0.5fr auto;
 	}
 	.list__item_t {
@@ -418,7 +431,7 @@ a:focus-visible {
 		grid-template-columns: auto 100px 60px 60px 0.5fr;
 		max-width: 1000px;
 	}
-	 .list__item_board {
+	.list__item_board {
 		grid-template-columns: auto 100px 60px 60px 0.5fr;
 		max-width: 1000px;
 	}
@@ -434,9 +447,11 @@ a:focus-visible {
 		justify-self: end;
 	}
 	.frame #cdawrap {
-	  text-align: right;
+        text-align: right;
 	}
-	
+	.board-box-size {
+		width: 50em;
+	}
 }
 
 @media screen and (min-width: 73em) {
@@ -449,10 +464,10 @@ a:focus-visible {
 	.list__item_t_up {
 		grid-template-columns: 70% 170px 170px;
 	}
-	.list__item_mp{
+	.list__item_mp {
 		grid-template-columns: 40px 300px 120px 120px 100px;
 	}
-	.list__item_board{
+	.list__item_board {
 		grid-template-columns: 40px 300px 80px 120px 120px;
 	}
 	.list__item-col:last-child {
@@ -460,6 +475,9 @@ a:focus-visible {
 	}
 	.list__item-button:last-child {
 		justify-self: center;
+	}
+	.board-box-size {
+		width: 80em;
 	}
 }
 @font-face {

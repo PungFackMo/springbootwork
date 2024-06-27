@@ -18,8 +18,8 @@ public class MainCont {
 	
 	@GetMapping("/")
 	public String getData(Model model) {
-		model.addAttribute("todos", tService.getTodos());
-		model.addAttribute("boards", bService.getBoards());
+		model.addAttribute("todos", tService.getTodosOnlyTen());
+		model.addAttribute("boards", bService.getBoardsOnlyTen());
 		return "/mainPage";
 	}
 

@@ -3,13 +3,23 @@ package com.TodoApp_1.todo;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+
+import com.TodoApp_1.board.BoardDto;
 
 @Service
 public class TodoService {
 	
 	@Autowired
 	TodoRepo tRepo;
+	
+	//디비에 있는 전체 데이터 중 내림차순으로 5개만 가져오기
+	public List<TodoDto> getTodosOnlyTen(){	
+		PageRequest pageRequest = PageRequest.of(0, 5, Sort.by(Sort.Direction.DESC, "id"));
+		return tRepo.findAll(pageRequest).getContent();
+	}
 	
 	//디비에 있는 전체 데이터 가져오기
 	public List<TodoDto> getTodos(){
